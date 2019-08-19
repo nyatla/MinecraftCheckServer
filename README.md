@@ -1,0 +1,2 @@
+# MinecraftCheckServer
+マインクラフトサーバーの状態を表示するサービス
