@@ -1,0 +1,41 @@
+<!DOCTYPE html>  
+<html lang="ja">  
+<head>
+	<meta charset="utf-8">  
+	<title>マインクラフトサーバ状態URLジェネレータ</title>  
+	<style id="user-style-nyatla-bg-img">
+	#host{
+		width:200px;
+	}
+	</style>
+	<script langurge="Javascript">
+function gElem(id)
+{
+	return document.getElementById(id);
+}
+function updateurl()
+{
+	var a=gElem("host").value;
+	var b=gElem("port").value;
+	var url="http://nyatla.jp/ws/mcsapi/mcsapi.php?cmd=si&s="+a+"&p="+b;
+	gElem("url").innerHTML="<a href=\""+url+"\">"+url+"</a>";
+}
+	</script>
+</head>
+<body onload="update();">
+<h1>マインクラフトサーバ状態URLジェネレータ</h1>
+<hr/>
+ご指定のマインクラフトサーバの状態を表示するURLを作ります。表にサーバの情報を入力して、ボタンを押してください。
+
+<h2>設定項目</h2>
+<table>
+<tr><td>サーバのアドレス</td><td><input id="host" type="text"></input></td></tr>
+<tr><td>サーバのポート番号</td><td><input id="port" type="number" value="25565"></input></td></tr>
+</table>
+<input type="button" value="URLを作る！" onclick="updateurl();" /></input>
+
+
+<h2>状態URL</h2>
+下のURLをブックマークして保存してください。
+<div id="url">ここにURLが表示されます。</div>
+</body>
